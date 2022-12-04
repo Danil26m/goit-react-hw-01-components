@@ -1,12 +1,12 @@
 import Profile from "./Profile/Profile.js";
-import user from './Profile/user.json';
+import user from './FileJson/user.json';
 import './style.css';
 import Statistics from "./Statistics/Statistics.js";
-import data from "./Statistics/data.json"
+import data from "./FileJson/data.json"
 import FriendList from "./FriendList/FriendList.js";
-import friends from "./FriendList/friends.json";
+import friends from "./FileJson/friends.json";
 import TransactionHistory from "./TransactionHistory/TransactionHistory.js";
-import transactions from "./TransactionHistory/transactions.json";
+import transactions from "./FileJson/transactions.json";
 export const App = () => {
   const color = ['aqua','rgb(91, 78, 177)','rgb(197, 80, 80)','rgb(80, 197, 164)','rgb(183, 78, 125)'];
   return (

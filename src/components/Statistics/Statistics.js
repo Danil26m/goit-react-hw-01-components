@@ -1,7 +1,6 @@
 import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
 const Statistics =({title,rgb,stats})=>{
-// const {id,label,percentage}=stats;
 const listItems = stats.map((stats,i)=>
     <li className={css.item} key={stats.id} style={{backgroundColor: rgb[i] }} >
       <span className="label">{stats.label}</span>
@@ -10,7 +9,7 @@ const listItems = stats.map((stats,i)=>
     );
 return(
     <section className={css.statistics}>
-  <h2 className={css.title}>{title}</h2>
+    {title?<h2 className={css.title}>{title}</h2>:null}
   <ul className={css.statList}>
     {listItems}
   </ul>
@@ -18,7 +17,7 @@ return(
 );
 }
 Statistics.propTypes={
-title:PropTypes.string.isRequired,
+title:PropTypes.string,
 rgb: PropTypes.arrayOf(PropTypes.string.isRequired),
 stats: PropTypes.arrayOf(
   PropTypes.shape({
