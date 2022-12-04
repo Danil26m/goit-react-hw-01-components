@@ -1,4 +1,5 @@
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 const Statistics =({title,rgb,stats})=>{
 // const {id,label,percentage}=stats;
 const listItems = stats.map((stats,i)=>
@@ -15,5 +16,17 @@ return(
   </ul>
 </section>
 );
+}
+Statistics.propTypes={
+title:PropTypes.string.isRequired,
+rgb: PropTypes.arrayOf(PropTypes.string.isRequired),
+stats: PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  })
+)
+
 }
 export default Statistics;
